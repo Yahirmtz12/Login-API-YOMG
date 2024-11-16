@@ -5,6 +5,6 @@ import { LoginComponent } from './components/login/login.component';
 export const routes: Routes = [
     {path:'list', component:UserListComponent},
     {path:'login', component:LoginComponent},
-    {path: '', redirectTo:'/list', pathMatch:'full'},
+    {path: '', redirectTo:'/login', pathMatch:'full'},
 
 ];

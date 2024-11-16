@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';  // Para formularios react
 import { MatInputModule } from '@angular/material/input';  // Para inputs de Angular Material
 import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from "../../app.component";  // Para botones de Angular Material
-
+import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -19,21 +19,30 @@ import { AppComponent } from "../../app.component";  // Para botones de Angular 
     AppComponent
 ],
   templateUrl: './login.component.html',
+  providers: [UserService],
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   errorMessage: string = '';
+  users: any[] = [];
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router,private userService: UserService) {
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(3)]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      username: ['', [Validators.required, Validators.minLength(0)]],
+      password: ['', [Validators.required, Validators.minLength(0)]],
     });
   }
 
   ngOnInit(): void {
-    // Aquí podrías hacer otras inicializaciones si es necesario
+    this.userService.getUsers().subscribe({
+      next: (data) => {
+        this.users = data;
+      },
+      error: (err) => {
+        console.error('Error fetching users:', err);
+      },
+    });
   }
 
   onLogin(): void {
@@ -43,9 +52,15 @@ export class LoginComponent implements OnInit {
 
     const { username, password } = this.loginForm.value;
 
-    if (username === 'admin' && password === 'admin123') {
+    const user = this.users.find(
+      (u) => u.name === username && u.password === password
+    );
+
+     if (user) {
+      // Si las credenciales son correctas
       this.router.navigate(['/list']);
     } else {
+      // Si las credenciales son incorrectas
       this.errorMessage = 'Invalid username or password';
     }
   }
