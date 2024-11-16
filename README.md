@@ -1,9 +1,9 @@
-### Proyecto con una API
-El proyecto trata de una API que tiene usuarios y tiene contraseñas, correos etc, el proposito de este es ver como el API se imprime en una tabla e imprime todos los usuarios 
+### Proyecto Validacion con API
+El proyecto trata de utilizar una API para validar los usuarios en la API y de acuerdo a eso darle acceso cuadno se inicie sesion si es que existe 
 
 ### PROCESO DE CREACION
 1. **Creación del proyecto en Angular**: 
-   - Comando para crear el proyecto: `ng new consumo-api-YOMG`
+   - Comando para crear el proyecto: `ng new Login-api-YOMG`
 2.**Servicios para darle diseño con Boostrap y dependencias**:
    - Comando: `npm install bootstrap y npm install -g @angular/cli`
 3. **Generacion de el servicio del API**: 
@@ -20,16 +20,26 @@ El proyecto trata de una API que tiene usuarios y tiene contraseñas, correos et
 7. **Modificacion en app components y routes**:  
    - Se deben de importar el componente de user list en el app.component.ts
    - En el archivo routes se implementa la ruta para que por default se abra el html user-list y se pueda visualizar
-8. **Finalizacion**:  
+8. **Ahora el login**:  
+   - Comando para crear componentes: `ng generate c components/login`
+   - En el archivo se crean los html y el ts que se ocuparan
+9. **Implementacion vista Html**:  
+   - Se crea un formato en el cual se obtengan los valores del username y el password para leerlos
+10. **Validacion con el API**:
+   - Se importa los user-service para poder usar el API
+   - Se implementa en el login component la inicializacion de donde se guardaran los usuarios de la API esto se hace simplemente con el getUsers que se tiene en user-service
+   - Codigo para hacer inicializacion
+   - this.userService.getUsers().subscribe({
+      next: (data) => {
+        this.users = data;
+   - Una vez adquirido los usuarios se procede adquirir los valores ingresados en los txtfields y buscar en el API uno que coincida con el , en dado caso que no haya no dara acceso y si si lo hara
+   - El codigo para implementar esta validacion es este
+   - const user = this.users.find(
+      (u) => u.name === username && u.password === password
+    );
+11. **Finalizacion**:  
   - Finalmente solo se ejecuta el comando `ng serve`
-  - Para iniciar el navegador y visualizar la lista
-9. **Pruebas**:  
+  - Para iniciar login y se muestre para que posteriormente ingresar un usuario valido y que lo dirija a la vista de la tabla de usuarios que es /list
+12. **Pruebas**:  
   - Las imagenes de las pruebas estan en la carpeta imagenes del proyecto
-### Preguntas
-1. ¿Qué ventajas tiene el uso de servicios en Angular para el consumo de APIs?
-Los servicios centralizan el código para consumir APIs, eso es lo que facilita su reutilización en varios componentes de la aplicación , asi tambien al tener la lógica de consumo de API en un servicio separado, es más fácil realizar pruebas unitarias
-2. ¿Por qué es importante separar la lógica de negocio de la lógica de presentación?
-Separar estas lógicas permite actualizar o modificar la lógica de negocio sin afectar la interfaz de usuario, lo que hace que el código sea más fácil de mantener
-3. ¿Qué otros tipos de datos o APIs podrías integrar en un proyecto como este?
-Un ejemplo muy utililzado en proyectos web puede ser de la geolocalización si el proyecto necesita datos de ubicación, podrías usar APIs de servicios como Google Maps o OpenStreetMap.
 
