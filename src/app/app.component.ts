@@ -1,12 +1,21 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { UserListComponent } from './components/user-list/user-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms'; 
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    ReactiveFormsModule,UserListComponent,
+    LoginComponent],  // No BrowserModule here
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']  // Corrected 'styleUrl' to 'styleUrls'
 })
 export class AppComponent {
   title = 'consumo-api-YOMG';
