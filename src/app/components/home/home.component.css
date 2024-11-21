@@ -1,0 +1,62 @@
+/* Estilos para la barra de navegación superior */
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+/* Estilo para el texto "Pokemon" */
+.pokemon-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+/* Estilo para el icono de usuario y el nombre */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  color: black;
+  margin-right: 8px;
+}
+
+.user-name {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+.logout mat-icon {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+/* Ajustes opcionales para el contenido principal */
+.content-container {
+  padding: 16px;
+  margin-top: 20px;
+  margin-right: 60px;
+  margin-bottom: 50px;
+  margin-left: 60px;
+}
+
+table {
+  width: 100%;
+}

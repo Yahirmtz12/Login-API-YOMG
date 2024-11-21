@@ -5,6 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms'; // Importar FormsModule
+
 import { MatSortModule } from '@angular/material/sort';
 @Component({
   selector: 'app-root',
@@ -12,7 +14,7 @@ import { MatSortModule } from '@angular/material/sort';
   imports: [RouterOutlet, MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    ReactiveFormsModule,UserListComponent,
+    ReactiveFormsModule,UserListComponent,FormsModule,
     LoginComponent],  // No BrowserModule here
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']  // Corrected 'styleUrl' to 'styleUrls'

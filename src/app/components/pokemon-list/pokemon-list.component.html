@@ -1,0 +1,51 @@
+<div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pokemon of paginatedData">
+          <td>{{ pokemon.id }}</td>
+          <td><img [src]="pokemon.image" alt="{{ pokemon.name }}" width="50" /></td>
+          <td>{{ pokemon.name }}</td>
+          <td>
+            <button mat-icon-button class="info-btn" (click)="viewInfo(pokemon.id)" title="Ver más información">
+              <mat-icon>info</mat-icon> <!-- Icono de info -->
+            </button>
+            <button mat-icon-button class="edit-btn" (click)="editPokemon(pokemon.id)" title="Editar">
+              <mat-icon>edit</mat-icon> <!-- Icono de lápiz para editar -->
+            </button>
+            <button mat-icon-button class="delete-btn" (click)="deletePokemon(pokemon.id)" title="Eliminar">
+              <mat-icon>delete</mat-icon> <!-- Icono de basura para eliminar -->
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Controles de Paginación -->
+    <div class="pagination-controls">
+      <button [disabled]="currentPage === 0" (click)="changePage(-1)">Anterior</button>
+      <span>Página {{ currentPage + 1 }} de {{ getTotalPages() }}</span>
+      <button [disabled]="currentPage >= getTotalPages() - 1" (click)="changePage(1)">Siguiente</button>
+    </div>
+  </div>
+  
+  <!-- Modal de Información del Pokémon -->
+  <ng-template mat-dialog-content>
+    <div *ngIf="selectedPokemon">
+      <h2>{{ selectedPokemon.name }}</h2>
+      <img [src]="selectedPokemon.image" alt="{{ selectedPokemon.name }}" width="100" />
+      <p>ID: {{ selectedPokemon.id }}</p>
+      <p>Descripción: {{ selectedPokemon.description }}</p>
+      <!-- Agregar más detalles del Pokémon aquí -->
+    </div>
+  </ng-template>
+
+
+  

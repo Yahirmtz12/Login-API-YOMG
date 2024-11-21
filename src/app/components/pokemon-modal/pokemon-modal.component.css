@@ -1,0 +1,60 @@
+/* Asegúrate de que el modal ocupe un tamaño adecuado */
+/* Estilo específico para el contenedor del modal */
+mat-dialog-container {
+    width: 90%; /* Ajusta el ancho del modal */
+    max-width: 800px; /* Máximo ancho */
+    padding: 10px; /* Relleno para los bordes */
+    text-align: center; /* Centrar el texto */
+    border-radius: 0px; /* Bordes no redondeados */
+    background-color: #ffffff; /* Fondo rojo */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Estilo para el título del modal */
+  mat-dialog-title {
+    font-size: 10px; /* Tamaño pequeño */
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  
+  /* Estilos para la imagen del Pokémon */
+  .pokemon-image {
+    width: 150px; /* Tamaño de la imagen */
+    height: 150px;
+    border-radius: 50%; /* Imagen circular */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    margin: 15px auto;
+  }
+  
+  /* Estilos para el texto (ID, Descripción) */
+   .pokemon-info {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  /* Estilos para los botones dentro del modal */
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  /* Estilo del botón cerrar dentro del modal */
+  .close-btn {
+    background-color: #2196f3; /* Azul */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .close-btn:hover {
+    background-color: #ff0000; /* Azul más oscuro al hacer hover */
+  }
+  

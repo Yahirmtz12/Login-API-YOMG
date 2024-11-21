@@ -1,0 +1,56 @@
+/* Estilo específico para el contenedor del modal */
+mat-dialog-container {
+    width: 90%; /* Ajusta el ancho del modal */
+    max-width: 600px; /* Máximo ancho */
+    padding: 20px; /* Relleno para los bordes */
+    text-align: center; /* Centrar el texto */
+    border-radius: 0px; /* Bordes no redondeados */
+    background-color: #ffffff; /* Fondo rojo claro */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Estilo para el título del modal */
+  mat-dialog-title {
+    font-size: 18px; /* Tamaño del título */
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para el texto (confirmación de eliminación) */
+  p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para los botones dentro del modal */
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 0px;
+    cursor: pointer;
+  }
+  
+  /* Botón "Sí, eliminar" */
+  button:first-child {
+    background-color: #ff0000; /* Rojo */
+    color: white;
+  }
+  
+  button:first-child:hover {
+    background-color: #c00; /* Rojo oscuro al hacer hover */
+  }
+  
+  /* Botón "Cancelar" */
+  button:last-child {
+    background-color: #2196f3; /* Azul */
+    color: white;
+  }
+  
+  button:last-child:hover {
+    background-color: #1976d2; /* Azul más oscuro al hacer hover */
+  }
+  

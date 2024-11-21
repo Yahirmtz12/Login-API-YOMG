@@ -1,0 +1,67 @@
+/* Estilo para el contenedor del modal */
+mat-dialog-container {
+    width: 90%; /* Ajusta el ancho del modal */
+    max-width: 600px; /* Máximo ancho */
+    padding: 20px;
+    text-align: left; /* Alinear el contenido a la izquierda */
+    border-radius: 1px; /* Sin bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+  
+  /* Estilo para el título */
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para los campos de entrada */
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para los botones */
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .save-btn {
+    background-color: #4caf50; /* Verde */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 1px;
+    text-transform: none; /* Evita texto en mayúsculas */
+  }
+  
+  .save-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .cancel-btn {
+    background-color: #f44336; /* Rojo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0px;
+    text-transform: none; /* Evita texto en mayúsculas */
+  }
+  
+  .cancel-btn:hover {
+    background-color: #d32f2f;
+  }
+  

@@ -19,7 +19,7 @@ import { UserService } from '../../services/user.service';
     AppComponent
 ],
   templateUrl: './login.component.html',
-  providers: [UserService],
+  providers: [],
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
@@ -58,7 +58,8 @@ export class LoginComponent implements OnInit {
 
      if (user) {
       // Si las credenciales son correctas
-      this.router.navigate(['/list']);
+      this.userService.setCurrentUser(username);
+      this.router.navigate(['/home']);
     } else {
       // Si las credenciales son incorrectas
       this.errorMessage = 'Invalid username or password';
@@ -66,6 +67,6 @@ export class LoginComponent implements OnInit {
   }
 
   onRegister(): void {
-    this.router.navigate(['/list']);
+    this.router.navigate(['/home']);
   }
 }

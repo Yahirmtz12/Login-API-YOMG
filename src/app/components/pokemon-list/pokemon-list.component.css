@@ -1,0 +1,93 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+
+th {
+  background-color: #f4f4f4;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+.pagination-controls {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:disabled {
+  background-color: #d6d6d6;
+}
+
+  
+  img {
+    display: block;
+    margin: auto;
+  }
+  
+  .pagination-controls {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  button {
+    margin: 0 10px;
+    background-color: #00bfff;
+  }
+  .info-btn {
+    background-color: #007bff; /* Azul para Info */
+    color: white;
+  }
+  
+  .info-btn:hover {
+    background-color: #0056b3; /* Azul oscuro al pasar el ratón */
+  }
+  
+  .edit-btn {
+    background-color: #ffc107; /* Amarillo para Editar */
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background-color: #e0a800; /* Amarillo oscuro al pasar el ratón */
+  }
+  
+  .delete-btn {
+    background-color: #dc3545; /* Rojo para Eliminar */
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c82333; /* Rojo oscuro al pasar el ratón */
+  }

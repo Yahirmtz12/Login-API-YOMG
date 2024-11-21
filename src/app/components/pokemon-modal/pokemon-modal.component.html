@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>{{ data.name }}</h2>
+<img class="pokemon-image" [src]="data.image" alt="{{ data.name }}" />
+<p class="pokemon-info">ID: {{ data.id }}</p>
+<p class="pokemon-info">Descripción: {{ data.description }}</p>
+
+<!-- Botón para cerrar el modal -->
+<div mat-dialog-actions>
+  <button mat-button class="close-btn" (click)="close()">Cerrar</button>
+</div>
